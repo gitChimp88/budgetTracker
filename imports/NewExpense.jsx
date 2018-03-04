@@ -18,6 +18,7 @@ export default class NewExpense extends React.Component {
 			category: ''
 		}
 		this.click = this.click.bind(this)
+		this.finish = this.finish.bind(this)
 	}
 	
 	 newExpense(e, cat){
@@ -71,10 +72,16 @@ export default class NewExpense extends React.Component {
 	finish(){
 		/*submit all project details in here and change page to home*/
 		debugger;
-		this.props.changePage("View")
+		
+		if(this.props.totalExpense > 1){
+			
 		this.props.addProject()
 		this.props.viewChange(this.props.project)
+		this.props.viewSwitch()	
+		this.props.changePage("View")
 		this.props.resetProject()
+		}
+		
 		
 	}
 	
@@ -118,6 +125,10 @@ export default class NewExpense extends React.Component {
 			display: "inline-block"
 		}
 		
+		const margin = {
+			marginTop: "15px"
+		}
+		
 		
 		
 		return(
@@ -139,7 +150,7 @@ export default class NewExpense extends React.Component {
 						<div className="row">
 							
 							<div className="col-xs-3">
-								<h3>Name:</h3>
+								<h3 style={margin}>Name:</h3>
 							</div>
 							
 							<div className="col-xs-9">
@@ -152,7 +163,7 @@ export default class NewExpense extends React.Component {
 						<div className="row">
 							
 							<div className="col-xs-3">
-								<h3>£</h3>
+								<h3 style={margin}>£</h3>
 							</div>
 							
 							<div className="col-xs-9">

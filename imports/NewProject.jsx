@@ -5,10 +5,14 @@ export default class NewProject extends React.Component {
 	
 	 selectPage(e){
 		 	/*save name and budget and continue to new expense*/
-		 this.props.changePage("NewExpense")
+		 
 		 var project = this.refs.name.value
 		 var amount = this.refs.amount.value
-		 this.props.setProject(project, amount)
+		 if(project && amount){
+			 this.props.setProject(project, amount)
+			 this.props.changePage("NewExpense")
+		 }
+		 
         }
 	
 	
@@ -64,6 +68,10 @@ export default class NewProject extends React.Component {
 				opacity: "0.8"
 		 }
 		
+		const marg = {
+			marginTop: "15px"
+		}
+		
 		return(
 				<div className="container-fluid">	
 				
@@ -84,7 +92,7 @@ export default class NewProject extends React.Component {
 				
 							<div className="row">
 								<div className="col-xs-3">
-									<h3>Name:</h3>
+									<h3 style={marg}>Name:</h3>
 								</div>
 								<div className="col-xs-9">
 									{this.props.project ? <h1>{this.props.project}</h1> : <input style={style} ref="name" /> }
@@ -93,7 +101,7 @@ export default class NewProject extends React.Component {
 				
 							<div className="row">
 								<div className="col-xs-3">
-									<h3>Budget:</h3>
+									<h3 const={marg}>Budget:</h3>
 								</div>
 								<div className="col-xs-9">
 									{this.props.amount ? <h1>{this.props.amount}</h1> : <input style={style} ref="amount" /> }

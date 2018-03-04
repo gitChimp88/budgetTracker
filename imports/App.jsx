@@ -20,6 +20,7 @@ export default class App extends React.Component {
 			expense: [],
 			view: '',
 			totalExpense: 0,
+			viewSwitch: ''
 		
 		}
 		this.changePage = this.changePage.bind(this)
@@ -61,9 +62,18 @@ export default class App extends React.Component {
                 Budget.remove({_id:id})
 	}
 	
+	viewswitch(){
+		
+		this.setState({viewSwitch: true})
+	}
+	
+	changeback(){
+		this.setState({viewSwitch: false})
+	}
+	
 	
 	updateProjects(id, project, amount, totalExpense){
-        this.setState({view: project})
+        this.setState({view: id})
 			
 		var newBalance = parseInt(amount) - parseInt(totalExpense)
 		
@@ -238,10 +248,13 @@ export default class App extends React.Component {
 							setExpense = {this.setExpense.bind(this)}
 							expense = {this.expenseReset.bind(this)}
 							setTotal = {this.setTotal}
+							totalExpense = {this.state.totalExpense}
 							viewChange = {this.viewChange.bind(this)}
 						    addProject = {this.addProject.bind(this)}
 							resetProject = {this.resetProject.bind(this)}
 						    project = {this.state.project}
+							viewSwitch = {this.viewswitch.bind(this)}	
+						    
 							/>
 					    </div>
 					
@@ -251,6 +264,8 @@ export default class App extends React.Component {
 						  projects = {this.state.projects}
 						  view = {this.state.view}
 						  changePage = {this.changePage}
+						  viewSwitch = {this.state.viewSwitch}
+						  changeBack = {this.changeback.bind(this)}
 						  /> 
 												    
 			} else if(page == "Edit"){

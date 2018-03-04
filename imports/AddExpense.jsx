@@ -33,7 +33,7 @@ export default class AddExpense extends React.Component {
 				<hr/>
 				
 				{this.props.projects.map((ele, i)=>{
-					if(ele.project == this.props.view){
+					if(ele._id == this.props.view){
 						return(
 							<div key={i}>
 								<Adding

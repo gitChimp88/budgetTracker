@@ -8,7 +8,8 @@ export default class Details extends React.Component {
 		
 	
 	changePage(e){
-		var target = e.target.previousSibling.innerHTML
+		//var target = e.target.previousSibling.innerHTML
+		var target = this.props.id
 		this.props.viewChange(target)
 		this.props.changePage("View")
 	}

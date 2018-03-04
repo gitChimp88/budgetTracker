@@ -13,8 +13,9 @@ export default class UpdateProject extends React.Component {
 	    var balance = this.props.balanceTotal
 		var totalExpense = this.props.totalExpenses
 		
+		
 		var id = this.props.id
-		var view = this.props.view
+		var view = this.props.project
 		
 		if(this.refs.project.value == ""){
 			this.props.updateProjects(id, view, amount, totalExpense)

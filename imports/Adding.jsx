@@ -41,6 +41,10 @@ export default class Adding extends React.Component {
 				color: "black",
 		}
 		
+		const marg = {
+			marginTop: "15px"
+		}
+		
 		return(
 				<div>		
 							
@@ -50,20 +54,20 @@ export default class Adding extends React.Component {
 						<div className="row">
 							
 							<div className="col-xs-3">
-								<h3>Name:</h3>
+								<h3 style={marg}>Name:</h3>
 							</div>
 							
 							<div className="col-xs-9">
 								<input style={style} ref="name" placeholder="Expense"/>
 							</div>
 							
-							<hr/>
+						
 					    </div>
 				
 						<div className="row">
 							
 							<div className="col-xs-3">
-								<h3>£</h3>
+								<h3 style={marg}>£</h3>
 							</div>
 							
 							<div className="col-xs-9">
