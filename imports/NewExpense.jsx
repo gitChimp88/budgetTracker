@@ -38,10 +38,10 @@ export default class NewExpense extends React.Component {
 			 this.props.setTotal(amount)
 			 this.refs.name.value = ''
 			 this.refs.amount.value = ''
-			 
+			 this.click()
 		 }
 		 
-		 this.click()
+		 
       }
 	
 	handleClick(e){
