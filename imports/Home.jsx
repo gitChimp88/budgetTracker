@@ -1,5 +1,6 @@
 import React from 'react'
 import Details from './Details'
+import FlipMove from 'react-flip-move'
 
 
 export default class Home extends React.Component {
@@ -87,7 +88,7 @@ export default class Home extends React.Component {
 					<hr/>
 				<br/>
 					
-				
+				<FlipMove>
 
 					{this.props.projects.map((ele, i)=>{
 						return ( 
@@ -109,7 +110,7 @@ export default class Home extends React.Component {
 							)
 					})}
 
-				    
+				    </FlipMove>
 					
 				
 					

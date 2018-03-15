@@ -1,5 +1,6 @@
 import React from 'react'
 import UpdateExpense from './UpdateExpense'
+import FlipMove from 'react-flip-move'
 
 
 export default class UpdateProject extends React.Component {
@@ -101,6 +102,7 @@ export default class UpdateProject extends React.Component {
 				
 					<hr/>
 
+				<FlipMove>
 					{this.props.expense.map((ele, i)=>{
 						
 							return(
@@ -123,7 +125,7 @@ export default class UpdateProject extends React.Component {
 				})}
 				
 			
-			
+			</FlipMove>
 					
 					
 			       
